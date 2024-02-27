@@ -188,6 +188,16 @@ public class Main {
 
          Final when used with a variable it will make it constant :) ( upper case all )
 
+         // 99
+         This two strings will be created in the String pool and will have the same refernce.
+         String name = "Jamila" ;
+         String name1 = "Jamila" ;
+
+         This two will be individual objects , and will have different reference :) each object will be created in Heap only
+         and each will be unique, even thouuh the value is same :)
+         String name2 = new String("Jamila");
+         String name3 = new String("Jamila");
+
 
 
 
