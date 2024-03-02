@@ -1,9 +1,6 @@
 package com.meghcode;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.Month;
+import java.time.*;
 
 public class Dates {
     public static void main(String[] args) {
@@ -37,6 +34,24 @@ public class Dates {
         LocalTime someTime = LocalTime.of(
                 12,55,55
         );
+       //
+        /*
+
+        for (String zone : ZoneId.getAvailableZoneIds()){ // this will give the list of all the time zones available :)
+            System.out.println(zone);
+        }
+        */
+
+       LocalDateTime nowInSydney =  LocalDateTime.now(ZoneId.of("Australia/Sydney")); // this will print the time of sydney
+        System.out.println(nowInSydney);
+
+        // 107 more date classes examples
+
+        System.out.println(LocalDateTime.now()); // will give you your local time and zone ( this will be mostly used )
+        System.out.println(ZonedDateTime.now()); // time of your zone
+        System.out.println(Instant.now());//UTC time zone
+
+
 
 
 
