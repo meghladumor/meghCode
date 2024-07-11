@@ -1,4 +1,4 @@
-package com.meghcode2;
+package com.meghcode2.address;
 
 public class Address {
     private int streetNumber;

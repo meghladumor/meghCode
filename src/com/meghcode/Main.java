@@ -198,6 +198,9 @@ public class Main {
          String name2 = new String("Jamila");
          String name3 = new String("Jamila");
 
+         // 141
+          This keyword refers to the current instance of the current class :)
+
 
 
 

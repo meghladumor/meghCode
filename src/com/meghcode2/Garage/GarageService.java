@@ -1,4 +1,4 @@
-package com.meghcode2.address;
+package com.meghcode2.Garage;
 
 import com.meghcode2.car.Car;
 
@@ -15,7 +15,7 @@ public class GarageService {
             }
         }
         if (count >=garage.getCapacity()){
-            return false;
         }
+        return false;
     }
 }

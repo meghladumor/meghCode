@@ -1,4 +1,10 @@
-package com.meghcode2;
+package com.meghcode2.person;
+
+import com.meghcode2.address.Address;
+import com.meghcode2.car.Car;
+
+import java.util.Arrays;
+import java.util.Objects;
 
 public class Person {
 
@@ -10,21 +16,23 @@ public class Person {
     private String emailAddress;
     private Address address;
 
+    private Car[] cars;
+
     public static int count = 0;
 
-    public Person(){
+    public Person() {
         System.out.println(" this is the default constructor");
         count++;
     }
-    public Person(String firstName, String lastName, Gender gender, String emailAddress, Address address) {
+
+    public Person(String firstName, String lastName, Gender gender, String emailAddress, Address address, Car[] cars) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
         this.emailAddress = emailAddress;
         this.address = address;
-        count++;
+        this.cars = cars;
     }
-
 
     public String getFirstName() {
         return firstName;
@@ -66,6 +74,29 @@ public class Person {
         this.address = address;
     }
 
+    public Car[] getCars() {
+        return cars;
+    }
+
+    public void setCars(Car[] cars) {
+        this.cars = cars;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return Objects.equals(firstName, person.firstName) && Objects.equals(lastName, person.lastName) && gender == person.gender && Objects.equals(emailAddress, person.emailAddress) && Objects.equals(address, person.address) && Arrays.equals(cars, person.cars);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(firstName, lastName, gender, emailAddress, address);
+        result = 31 * result + Arrays.hashCode(cars);
+        return result;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
@@ -74,6 +105,7 @@ public class Person {
                 ", gender=" + gender +
                 ", emailAddress='" + emailAddress + '\'' +
                 ", address=" + address +
+                ", cars=" + Arrays.toString(cars) +
                 '}';
     }
 }
